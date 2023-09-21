@@ -6,7 +6,7 @@ function setup() {
 }
 
 function draw() {
-  print(mouseX, mouseY)
+  
   var c = color(255, 255, 0)
   var d = color(255, 229, 180)
   var g = color(0, 169, 0)
