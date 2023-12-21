@@ -1,1 +1,0 @@
-I realized that p5js is starting to act weird and some of my projects aren't working. In the html, you might need to post: <script src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script> 1 ~ 2 times. Thanks!
