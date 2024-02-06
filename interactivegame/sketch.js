@@ -81,9 +81,13 @@ function draw() {
       playery = 200;
     }
     if (level != 6) {
-      if (keyIsDown(37) || (keyIsDown(65) && playerx > 25)) {
+      if (keyIsDown(37)  && playerx > 25) {
         playerspeed = 5;
         playerx -= playerspeed;
+      }
+      if(keyIsDown(65) && playerx > 25){
+        playerspeed = 5;
+        playerx -= playerspeed
       }
       if (keyIsDown(39) || keyIsDown(68)) {
         playerspeed = 5;
@@ -93,10 +97,16 @@ function draw() {
           playerx += playerspeed;
         }
       }
-      if (keyIsDown(40) || (keyIsDown(83) && playery < 375)) {
+      if ((keyIsDown(40) && playery < 375)) {
         playery += playerspeed;
       }
-      if (keyIsDown(38) || (keyIsDown(87) && playery > 25)) {
+      if ((keyIsDown(83)) && playery < 375) {
+        playery += playerspeed;
+      }
+      if (keyIsDown(38) && playery > 25) {
+        playery -= playerspeed;
+      }
+      if ((keyIsDown(87)) && playery > 25) {
         playery -= playerspeed;
       }
     }
@@ -285,7 +295,7 @@ function draw() {
       }
     }
     if (level == 5) {
-      text("You weren't supposed to beat that", 200, 20);
+      text("You weren't supposed to beat that LMAO", 100, 20);
       text("Now this \n is impossible :)", 50, 50);
       if (gotfinalkey == false) {
         text("Come back later! - \nAnonymous", 350, 50);
@@ -440,9 +450,13 @@ function draw() {
       let truthtest = prompt("How many times did you fail?");
       text("Were you hacking .....", 200, 20);
       if (truthtest / 1 == truthtest) {
-        if (truthtest == fail) {
+        if (truthtest == fail && gotfinalkey == true) {
           level += 1;
-        } else {
+        } 
+        else if(truthtest == fail && gotfinalkey == true){
+          level += 3
+        }
+        else {
           level += 2;
         }
       }
@@ -461,6 +475,11 @@ function draw() {
       fill(255, 0, 0);
       text("You evil little liar... You're ded eternally >:D", 200, 20);
       image(img, 150, 100, 150, 250);
+    }
+    if(level == 12){
+      background(0)
+      fill(255, 0, 0)
+      text("How the hell did you do this?", 200, 20)
     }
   }
 }
